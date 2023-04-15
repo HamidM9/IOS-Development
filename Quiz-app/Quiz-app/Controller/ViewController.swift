@@ -12,16 +12,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     
-  let  quiz = ["one + two", "3"]
+  let  quiz = ["one + two", "TRUE"]
     
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionLabel.text = quiz[0]
+        
     }
 
 
+    @IBAction func answerButtonPressed(_ sender: UIButton) {
+        
+        var userAnswer = sender.currentTitle!
+        print(userAnswer)
+    }
+    
+    
 }
 
