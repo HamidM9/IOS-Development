@@ -21,8 +21,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var restartButton: UIButton!
     
-    var questionNumber = 0
-    var score = 0
+    
+    
     var quizBrain = QuizBrain()
     
     override func viewDidLoad() {
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         
         
         if quizBrain.checkAnswer(userAnswer: sender.currentTitle!){
-            score = score + 1
+            
             
             sender.backgroundColor = UIColor.green
             
@@ -46,14 +46,14 @@ class ViewController: UIViewController {
             
         }
        
-        if questionNumber + 1 < quizBrain.quiz.count  {
-            questionNumber = questionNumber + 1
+        if  quizBrain.checkQuestionNumberIsLessThanQuizLength() {
+            
             Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
         else{
             Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(finalUI), userInfo: nil, repeats: false)
-            questionLabel.font = questionLabel.font?.withSize(50)
-            questionLabel.text = "Your Score is \(score)"
+            questionLabel.font = questionLabel.font?.withSize(17)
+            questionLabel.text = "Your Score is \(quizBrain.getScore())"
             questionLabel.textAlignment = .center
             questionLabel.sizeToFit()
             scoreLabel.isHidden = true
@@ -65,18 +65,38 @@ class ViewController: UIViewController {
     }
     
     @IBAction func restartButtonPressed(_ sender: UIButton) {
+        
+        quizBrain.resetEverything()
+        updateUI()
+        scoreLabel.isHidden = false
+        trueButtonLabel.isHidden = false
+        falseButtonLabel.isHidden = false
+        restartButton.isHidden = true
+        
+        scoreLabel.text = "Score : \(quizBrain.getScore())"
+        questionLabel.font = questionLabel.font?.withSize(17)
+        
+        
+        
+        
+        
     }
     
     
    @objc func updateUI(){
         
-       questionLabel.text = quizBrain.quiz[questionNumber].text
-        scoreLabel.text = "Score : \(score)"
+       questionLabel.text = quizBrain.nextQuestion()
+       progressBar.progress = quizBrain.progressBar()
+       
+       questionLabel.textAlignment = .center
+       questionLabel.sizeToFit()
+       
+       scoreLabel.text = "Score : \(quizBrain.getScore())"
         
         
         trueButtonLabel.backgroundColor = UIColor.systemGroupedBackground
         falseButtonLabel.backgroundColor = UIColor.systemGroupedBackground
-       progressBar.progress = Float(questionNumber+1) / Float(quizBrain.quiz.count)
+       
         
 
     }
