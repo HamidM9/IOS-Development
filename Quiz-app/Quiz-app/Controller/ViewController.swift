@@ -114,9 +114,13 @@ class ViewController: UIViewController {
         trueButtonLabel.isHidden = true
         falseButtonLabel.isHidden = true
         restartButton.isHidden = false
-        restartButton.layer.cornerRadius = restartButton.frame.width / 2
+        
+        
+        restartButton.layer.cornerRadius = 0.5 * restartButton.bounds.size.width
+        restartButton.clipsToBounds = true
+        
         restartButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        restartButton.layer.masksToBounds = true
+        
     }
     
 }

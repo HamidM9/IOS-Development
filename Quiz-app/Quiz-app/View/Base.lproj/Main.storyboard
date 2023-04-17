@@ -62,9 +62,8 @@
                                 <color key="textColor" systemColor="tintColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syS-fp-k6a">
-                                <rect key="frame" x="146" y="574" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syS-fp-k6a">
+                                <rect key="frame" x="147" y="687" width="99" height="99"/>
                                 <rect key="contentStretch" x="1" y="0.80000000000000004" width="1" height="1"/>
                                 <inset key="contentEdgeInsets" minX="160" minY="50" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
@@ -83,6 +82,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4DU-qr-QXZ" secondAttribute="trailing" constant="10" id="1iS-el-Ipa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yKW-Hp-rXf" secondAttribute="trailing" constant="30" id="2pS-Rx-8cQ"/>
+                            <constraint firstItem="syS-fp-k6a" firstAttribute="centerX" secondItem="yKW-Hp-rXf" secondAttribute="centerX" id="8gs-5J-EBX"/>
                             <constraint firstItem="b95-0B-dsM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="A25-mT-Kvu"/>
                             <constraint firstItem="4DU-qr-QXZ" firstAttribute="top" secondItem="b95-0B-dsM" secondAttribute="bottom" id="AHB-AR-OKT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="haD-bg-Qt9" secondAttribute="trailing" constant="30" id="DiV-ku-Vng"/>
@@ -92,8 +92,10 @@
                             <constraint firstItem="V2p-Fy-nOK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="ULb-SW-I13"/>
                             <constraint firstItem="yKW-Hp-rXf" firstAttribute="top" secondItem="haD-bg-Qt9" secondAttribute="bottom" constant="20" id="XTx-vs-8rL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b95-0B-dsM" secondAttribute="trailing" constant="30" id="ei4-nP-Cmo"/>
+                            <constraint firstItem="syS-fp-k6a" firstAttribute="top" secondItem="4DU-qr-QXZ" secondAttribute="bottom" constant="23" id="iys-OQ-Hpd"/>
                             <constraint firstItem="b95-0B-dsM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="jDq-wz-k5t"/>
                             <constraint firstItem="haD-bg-Qt9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="n0m-FL-YFG"/>
+                            <constraint firstItem="V2p-Fy-nOK" firstAttribute="top" secondItem="syS-fp-k6a" secondAttribute="bottom" constant="18" id="pQZ-bI-Z8h"/>
                             <constraint firstItem="4DU-qr-QXZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="pum-Ra-ipj"/>
                             <constraint firstItem="yKW-Hp-rXf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="sH7-Wj-JXT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="V2p-Fy-nOK" secondAttribute="bottom" constant="10" id="xXg-dd-dEX"/>
