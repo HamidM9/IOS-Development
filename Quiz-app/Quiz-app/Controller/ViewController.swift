@@ -23,22 +23,20 @@ class ViewController: UIViewController {
     
     var questionNumber = 0
     var score = 0
-    let quiz = [Questions(text: "one + two is 3", answer: "TRUE"),
-                Questions(text: "three plus three is six", answer: "TRUE"),
-                Questions(text: "Two plus two is nine ", answer: "FALSE")]
+    var quizBrain = QuizBrain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
         
+       
     }
 
 
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-      
-        let userAnswer = sender.currentTitle
-        let actualAnswer = quiz[questionNumber].answer
-        if userAnswer==actualAnswer{
+        
+        
+        if quizBrain.checkAnswer(userAnswer: sender.currentTitle!){
             score = score + 1
             
             sender.backgroundColor = UIColor.green
@@ -48,7 +46,7 @@ class ViewController: UIViewController {
             
         }
        
-        if questionNumber + 1 < quiz.count  {
+        if questionNumber + 1 < quizBrain.quiz.count  {
             questionNumber = questionNumber + 1
             Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
@@ -58,8 +56,8 @@ class ViewController: UIViewController {
             questionLabel.text = "Your Score is \(score)"
             questionLabel.textAlignment = .center
             questionLabel.sizeToFit()
+            scoreLabel.isHidden = true
             
-            scoreLabel.text =  "Score : \(score)"
             restartModule()
         }
         
@@ -71,14 +69,14 @@ class ViewController: UIViewController {
     
     
    @objc func updateUI(){
-        print("--------------------------")
-        questionLabel.text = quiz[questionNumber].text
+        
+       questionLabel.text = quizBrain.quiz[questionNumber].text
         scoreLabel.text = "Score : \(score)"
         
         
         trueButtonLabel.backgroundColor = UIColor.systemGroupedBackground
         falseButtonLabel.backgroundColor = UIColor.systemGroupedBackground
-       progressBar.progress = Float(questionNumber+1) / Float(quiz.count)
+       progressBar.progress = Float(questionNumber+1) / Float(quizBrain.quiz.count)
         
 
     }
@@ -86,13 +84,13 @@ class ViewController: UIViewController {
     @objc func finalUI(){
         
         
-        scoreLabel.isHidden = true
+        
         trueButtonLabel.backgroundColor = UIColor.systemGroupedBackground
         falseButtonLabel.backgroundColor = UIColor.systemGroupedBackground
     }
     
     func restartModule(){
-        print("ok")
+        
         trueButtonLabel.isHidden = true
         falseButtonLabel.isHidden = true
         restartButton.isHidden = false

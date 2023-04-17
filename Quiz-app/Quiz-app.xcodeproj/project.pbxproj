@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB12024329ED73790029B4B1 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB12024229ED73780029B4B1 /* QuizBrain.swift */; };
 		DB88332629EB1F660050879A /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB88332529EB1F660050879A /* Questions.swift */; };
 		DB9319B929E950FE001B7409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9319B829E950FE001B7409 /* AppDelegate.swift */; };
 		DB9319BB29E950FE001B7409 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9319BA29E950FE001B7409 /* SceneDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB12024229ED73780029B4B1 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		DB88332529EB1F660050879A /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		DB9319B529E950FE001B7409 /* Quiz-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quiz-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9319B829E950FE001B7409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				DB88332529EB1F660050879A /* Questions.swift */,
+				DB12024229ED73780029B4B1 /* QuizBrain.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				DB9319BD29E950FE001B7409 /* ViewController.swift in Sources */,
 				DB9319B929E950FE001B7409 /* AppDelegate.swift in Sources */,
 				DB9319C329E950FE001B7409 /* Quiz_app.xcdatamodeld in Sources */,
+				DB12024329ED73790029B4B1 /* QuizBrain.swift in Sources */,
 				DB88332629EB1F660050879A /* Questions.swift in Sources */,
 				DB9319BB29E950FE001B7409 /* SceneDelegate.swift in Sources */,
 			);
