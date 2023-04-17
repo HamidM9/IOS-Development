@@ -85,8 +85,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="falseButtonLabel" destination="yKW-Hp-rXf" id="vfB-4U-bNn"/>
+                        <outlet property="progressBar" destination="V2p-Fy-nOK" id="NjA-SH-hZp"/>
                         <outlet property="questionLabel" destination="4DU-qr-QXZ" id="uVG-Vv-1vj"/>
                         <outlet property="scoreLabel" destination="b95-0B-dsM" id="XKF-Df-PBu"/>
+                        <outlet property="trueButtonLabel" destination="haD-bg-Qt9" id="Rnq-A1-SWB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
