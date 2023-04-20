@@ -38,7 +38,7 @@
                                     <constraint firstAttribute="height" constant="80" id="xgw-ve-W2P"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="ButtonBelow">
+                                <buttonConfiguration key="configuration" style="plain" title="TURN RIGHT">
                                     <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -46,6 +46,9 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="choiceMade:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LUo-aI-B4I"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HML-iS-BwK">
                                 <rect key="frame" x="98" y="693" width="234" height="80"/>
@@ -54,7 +57,7 @@
                                     <constraint firstAttribute="height" constant="80" id="h0h-ma-hIx"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="ButtonUP" cornerStyle="dynamic">
+                                <buttonConfiguration key="configuration" style="plain" title="TURN LEFT" cornerStyle="dynamic">
                                     <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -62,6 +65,9 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="choiceMade:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7BI-kT-4VX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -86,6 +92,11 @@
                             <constraint firstItem="nez-tG-HMD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wm6-0C-JtZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonDownLabel" destination="3V9-z5-Pqv" id="ftD-aj-l4w"/>
+                        <outlet property="buttonUpLabel" destination="HML-iS-BwK" id="emd-6x-6vF"/>
+                        <outlet property="storyText" destination="1N9-Qe-msw" id="0j4-Kt-pit"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

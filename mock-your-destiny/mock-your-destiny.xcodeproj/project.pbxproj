@@ -14,6 +14,8 @@
 		DB099FE729F05BC90058C235 /* mock_your_destiny.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB099FE529F05BC90058C235 /* mock_your_destiny.xcdatamodeld */; };
 		DB099FE929F05BCB0058C235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB099FE829F05BCB0058C235 /* Assets.xcassets */; };
 		DB099FEC29F05BCB0058C235 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB099FEA29F05BCB0058C235 /* LaunchScreen.storyboard */; };
+		DB0E9D8729F13973000D4418 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0E9D8629F13973000D4418 /* Story.swift */; };
+		DB4C7EDA29F1A450008D13A3 /* StoryBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4C7ED929F1A450008D13A3 /* StoryBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		DB099FE829F05BCB0058C235 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB099FEB29F05BCB0058C235 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB099FED29F05BCB0058C235 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB0E9D8629F13973000D4418 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		DB4C7ED929F1A450008D13A3 /* StoryBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +62,42 @@
 		DB099FDB29F05BC90058C235 /* mock-your-destiny */ = {
 			isa = PBXGroup;
 			children = (
+				DB0E9D8329F1391C000D4418 /* Model */,
+				DB0E9D8429F13924000D4418 /* View */,
+				DB0E9D8529F1392E000D4418 /* Controller */,
 				DB099FDC29F05BC90058C235 /* AppDelegate.swift */,
 				DB099FDE29F05BC90058C235 /* SceneDelegate.swift */,
-				DB099FE029F05BC90058C235 /* ViewController.swift */,
-				DB099FE229F05BC90058C235 /* Main.storyboard */,
 				DB099FE829F05BCB0058C235 /* Assets.xcassets */,
 				DB099FEA29F05BCB0058C235 /* LaunchScreen.storyboard */,
 				DB099FED29F05BCB0058C235 /* Info.plist */,
 				DB099FE529F05BC90058C235 /* mock_your_destiny.xcdatamodeld */,
 			);
 			path = "mock-your-destiny";
+			sourceTree = "<group>";
+		};
+		DB0E9D8329F1391C000D4418 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB0E9D8629F13973000D4418 /* Story.swift */,
+				DB4C7ED929F1A450008D13A3 /* StoryBrain.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DB0E9D8429F13924000D4418 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB099FE229F05BC90058C235 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DB0E9D8529F1392E000D4418 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DB099FE029F05BC90058C235 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB4C7EDA29F1A450008D13A3 /* StoryBrain.swift in Sources */,
 				DB099FE129F05BC90058C235 /* ViewController.swift in Sources */,
 				DB099FE729F05BC90058C235 /* mock_your_destiny.xcdatamodeld in Sources */,
 				DB099FDD29F05BC90058C235 /* AppDelegate.swift in Sources */,
 				DB099FDF29F05BC90058C235 /* SceneDelegate.swift in Sources */,
+				DB0E9D8729F13973000D4418 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
