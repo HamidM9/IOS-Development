@@ -29,8 +29,9 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="tML-0t-R6y">
                                 <rect key="frame" x="51.333333333333343" y="574" width="327.66666666666663" height="117.33333333333337"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwV-Pb-UUf">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwV-Pb-UUf">
                                         <rect key="frame" x="0.0" y="0.0" width="141.33333333333334" height="117.33333333333333"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <imageReference key="image" image="pill.circle.fill" catalog="system" symbolScale="large"/>
@@ -38,9 +39,13 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="75"/>
                                             </preferredSymbolConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O1L-Xu-xnY"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBv-ZJ-QZP">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBv-ZJ-QZP">
                                         <rect key="frame" x="186.33333333333331" y="0.0" width="141.33333333333331" height="117.33333333333333"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <imageReference key="image" image="pill.circle.fill" catalog="system" symbolScale="large"/>
@@ -48,6 +53,9 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="75"/>
                                             </preferredSymbolConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0PS-a0-PG8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -65,15 +73,58 @@
                             <constraint firstItem="nQ3-qI-gbH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sZb-iu-cG1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="Ah6-2e-fgI" kind="presentation" identifier="goToResult" id="bSd-sS-7qL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54.418604651162788" y="-2.5751072961373391"/>
+            <point key="canvasLocation" x="-212" y="-2"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="ePH-ie-coG">
+            <objects>
+                <viewController id="Ah6-2e-fgI" customClass="ResultViewController" customModule="for_repeat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sKW-Hw-YJx">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e1d-hu-Bk8">
+                                <rect key="frame" x="41" y="132" width="348" height="267"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="421-C1-U0U">
+                                <rect key="frame" x="65" y="695" width="301" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="return" catalog="system" title="Try Again">
+                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="32"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="turnBack:" destination="Ah6-2e-fgI" eventType="touchUpInside" id="tgT-ri-Rkb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BQ6-qo-0T1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="e1d-hu-Bk8" id="7Dm-IX-p1t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fhD-Ki-kZU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="598.60465116279067" y="-3.218884120171674"/>
         </scene>
     </scenes>
     <resources>
         <image name="back1" width="341.33334350585938" height="341.33334350585938"/>
         <image name="pill.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="return" catalog="system" width="128" height="102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
