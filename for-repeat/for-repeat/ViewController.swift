@@ -9,7 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var idTracker:Int?
+    
+    var tosieBehdashti = TosieBehdashti()
+    var idTracker1:CGFloat?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,16 +20,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction func answerPressed(_ sender: UIButton) {
+        
+        idTracker1 = sender.tintColor.cgColor.components![0]
+        tosieBehdashti.setTosie(idTracker: idTracker1!)
         self.performSegue(withIdentifier: "goToResult", sender: self)
-        idTracker = Int(sender.restorationIdentifier!)!
-        print(idTracker!)
+        print(idTracker1!)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResult"{
             let destinationVC = segue.destination as! ResultViewController
-            destinationVC.finalMessage = "HAmid"
+            destinationVC.finalMessage = tosieBehdashti.tosie
             
+ 
             
         }
     }
