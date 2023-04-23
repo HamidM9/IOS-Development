@@ -89,9 +89,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="421-C1-U0U">
-                                <rect key="frame" x="40" y="769.66666666666663" width="350" height="52.333333333333371"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="421-C1-U0U">
+                                <rect key="frame" x="40" y="753" width="350" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="zej-AS-OWZ"/>
+                                </constraints>
                                 <color key="tintColor" red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="return" catalog="system" title="Try Again">
@@ -101,9 +103,8 @@
                                     <action selector="turnBack:" destination="Ah6-2e-fgI" eventType="touchUpInside" id="tgT-ri-Rkb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e1d-hu-Bk8">
-                                <rect key="frame" x="40" y="291" width="350" height="161"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e1d-hu-Bk8">
+                                <rect key="frame" x="40" y="147" width="350" height="466"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="35"/>
                                 <nil key="textColor"/>
@@ -112,6 +113,18 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BQ6-qo-0T1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="421-C1-U0U" firstAttribute="top" secondItem="e1d-hu-Bk8" secondAttribute="bottom" constant="140" id="1Qp-S9-PIs"/>
+                            <constraint firstItem="e1d-hu-Bk8" firstAttribute="top" secondItem="BQ6-qo-0T1" secondAttribute="top" constant="147" id="DEY-z3-EwW"/>
+                            <constraint firstItem="e1d-hu-Bk8" firstAttribute="top" secondItem="BQ6-qo-0T1" secondAttribute="top" constant="147" id="FsG-Lr-w9T"/>
+                            <constraint firstItem="e1d-hu-Bk8" firstAttribute="leading" secondItem="BQ6-qo-0T1" secondAttribute="leading" constant="40" id="GcD-iC-hez"/>
+                            <constraint firstItem="421-C1-U0U" firstAttribute="leading" secondItem="BQ6-qo-0T1" secondAttribute="leading" constant="40" id="S6a-ka-oiH"/>
+                            <constraint firstItem="BQ6-qo-0T1" firstAttribute="trailing" secondItem="e1d-hu-Bk8" secondAttribute="trailing" constant="40" id="Xzw-xz-Pev"/>
+                            <constraint firstItem="BQ6-qo-0T1" firstAttribute="bottom" secondItem="421-C1-U0U" secondAttribute="bottom" constant="100" id="Y1e-pN-PvI"/>
+                            <constraint firstItem="BQ6-qo-0T1" firstAttribute="trailing" secondItem="e1d-hu-Bk8" secondAttribute="trailing" constant="40" id="aPI-bO-6sm"/>
+                            <constraint firstItem="e1d-hu-Bk8" firstAttribute="leading" secondItem="BQ6-qo-0T1" secondAttribute="leading" constant="40" id="aVu-f8-B6j"/>
+                            <constraint firstItem="BQ6-qo-0T1" firstAttribute="trailing" secondItem="421-C1-U0U" secondAttribute="trailing" constant="40" id="o1k-W2-zXc"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="messageLabel" destination="e1d-hu-Bk8" id="7Dm-IX-p1t"/>

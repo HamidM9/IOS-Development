@@ -24,13 +24,14 @@ class ViewController: UIViewController {
         idTracker1 = sender.tintColor.cgColor.components![0]
         tosieBehdashti.setTosie(idTracker: idTracker1!)
         self.performSegue(withIdentifier: "goToResult", sender: self)
-        print(idTracker1!)
+        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResult"{
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.finalMessage = tosieBehdashti.tosie
+            
             
  
             
