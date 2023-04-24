@@ -52,18 +52,26 @@ class CalculatorViewController: UIViewController {
         
         
         self.performSegue(withIdentifier: "goToResult", sender: self)
+        billTextField.text = ""
+        splitNumberLabel.text = "0"
+        zeroPctButton.isSelected = false
+        tenPctButton.isSelected = false
+        twentyPctButton.isSelected = false
+           
         
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        billAmount = Double(billTextField.text!)!
-        if segue.identifier == "goToResult"{
-            let destinationVC = segue.destination as! ResultViewController
-            destinationVC.numberOfPeople = splitNumber
-            destinationVC.amountOfEachPerson = (billAmount + (billAmount*tip)) / Double(splitNumber)
-            destinationVC.finalTip = tip * 100
-        }
+        
+            billAmount = Double(billTextField.text!)!
+            if segue.identifier == "goToResult"{
+                let destinationVC = segue.destination as! ResultViewController
+                destinationVC.numberOfPeople = splitNumber
+                destinationVC.amountOfEachPerson = (billAmount + (billAmount*tip)) / Double(splitNumber)
+                destinationVC.finalTip = tip * 100
+            }
+        
     }
 }
 
