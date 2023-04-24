@@ -50,9 +50,20 @@ class CalculatorViewController: UIViewController {
     @IBAction func calculateButtonPressed(_ sender: UIButton) {
         
         print(Double(billTextField.text!)! * tip)
-        
+        self.performSegue(withIdentifier: "goToResult", sender: self)
         
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "goToResult"{
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.numberOfPeople = splitNumber
+            destinationVC.finalTip = tip
+            destinationVC.finalTip = tip * 100
+        }
+    }
 }
 

@@ -118,6 +118,7 @@
                         <outlet property="tenPctButton" destination="XbE-yA-pTr" id="FXe-Sb-ngi"/>
                         <outlet property="twentyPctButton" destination="z0K-ai-VQx" id="Pbc-qm-JuM"/>
                         <outlet property="zeroPctButton" destination="hNM-hq-te6" id="Eas-ys-1yR"/>
+                        <segue destination="TYQ-Zp-nwg" kind="presentation" identifier="goToResult" id="xo2-3o-Idf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -129,7 +130,7 @@
             <objects>
                 <viewController id="TYQ-Zp-nwg" customClass="ResultViewController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sXs-db-zft">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Per Person" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ecP-KZ-ze2">
@@ -167,12 +168,17 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="calculateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="21T-MP-5Um"/>
+                                    <action selector="recalculatePressed:" destination="TYQ-Zp-nwg" eventType="touchUpInside" id="NA6-10-qsJ"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9YC-p9-GHi"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <connections>
+                        <outlet property="finalAmountLabel" destination="HZG-xz-0lp" id="eKF-9b-3Sj"/>
+                        <outlet property="finalSentence" destination="P1o-No-yGy" id="nTt-P5-BW7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9TY-wS-T3V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
