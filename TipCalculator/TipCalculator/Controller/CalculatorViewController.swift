@@ -17,6 +17,7 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var splitNumberLabel: UILabel!
     
     var tip = 0.1
+    var splitNumber = 0
 
     @IBAction func tipChanged(_ sender: UIButton) {
         
@@ -35,14 +36,22 @@ class CalculatorViewController: UIViewController {
                let buttonTitleMinusPercentSign =  String(buttonTitle.dropLast())
                let buttonTitleAsANumber = Double(buttonTitleMinusPercentSign)!
                tip = buttonTitleAsANumber / 100
+            billTextField.endEditing(true)
                 
                 
         
     }
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        
+        splitNumberLabel.text = String(Int(sender.value))
+        splitNumber = Int(sender.value)
+        
     }
     @IBAction func calculateButtonPressed(_ sender: UIButton) {
-        print(tip)
+        
+        print(Double(billTextField.text!)! * tip)
+        
+        
     }
     
 }
