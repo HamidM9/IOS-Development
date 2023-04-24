@@ -18,24 +18,25 @@ class CalculatorViewController: UIViewController {
     
     var tip = 0.1
     var splitNumber = 0
+    var billAmount = 0.00
 
     @IBAction func tipChanged(_ sender: UIButton) {
         
         
         
        
-               zeroPctButton.isSelected = false
-               tenPctButton.isSelected = false
-               twentyPctButton.isSelected = false
+            zeroPctButton.isSelected = false
+            tenPctButton.isSelected = false
+            twentyPctButton.isSelected = false
                
                
-               sender.isSelected = true
+            sender.isSelected = true
         
                
-               let buttonTitle = sender.currentTitle!
-               let buttonTitleMinusPercentSign =  String(buttonTitle.dropLast())
-               let buttonTitleAsANumber = Double(buttonTitleMinusPercentSign)!
-               tip = buttonTitleAsANumber / 100
+            let buttonTitle = sender.currentTitle!
+            let buttonTitleMinusPercentSign =  String(buttonTitle.dropLast())
+            let buttonTitleAsANumber = Double(buttonTitleMinusPercentSign)!
+            tip = buttonTitleAsANumber / 100
             billTextField.endEditing(true)
                 
                 
@@ -49,19 +50,18 @@ class CalculatorViewController: UIViewController {
     }
     @IBAction func calculateButtonPressed(_ sender: UIButton) {
         
-        print(Double(billTextField.text!)! * tip)
+        
         self.performSegue(withIdentifier: "goToResult", sender: self)
         
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        billAmount = Double(billTextField.text!)!
         if segue.identifier == "goToResult"{
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.numberOfPeople = splitNumber
-            destinationVC.finalTip = tip
+            destinationVC.amountOfEachPerson = (billAmount + (billAmount*tip)) / Double(splitNumber)
             destinationVC.finalTip = tip * 100
         }
     }

@@ -14,7 +14,7 @@ class ResultViewController: UIViewController {
     
     
     var numberOfPeople = 0
-    var amountOfEachPerson = 0.0
+    var amountOfEachPerson = 0.00
     var finalTip = 0.0
     
     
@@ -25,6 +25,7 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         finalAmountLabel.text = String(amountOfEachPerson)
         finalSentence.text = "Split between \(numberOfPeople) people, with \(Int(finalTip))% tip"
+        finalAmountLabel.text = String(format: "%.2f", amountOfEachPerson)
         
     }
     
