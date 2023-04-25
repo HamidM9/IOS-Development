@@ -13,9 +13,9 @@ class ResultViewController: UIViewController {
    
     
     
-    var numberOfPeople = 0
-    var amountOfEachPerson = 0.00
-    var finalTip = 0.0
+    var numberOfPeople = 2
+    var amountOfEachPerson = "0.0"
+    var finalTip = 0
     
     
     @IBOutlet weak var finalAmountLabel: UILabel!
@@ -23,9 +23,9 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var finalSentence: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        finalAmountLabel.text = String(amountOfEachPerson)
-        finalSentence.text = "Split between \(numberOfPeople) people, with \(Int(finalTip))% tip"
-        finalAmountLabel.text = String(format: "%.2f", amountOfEachPerson)
+        finalAmountLabel.text = amountOfEachPerson
+        finalSentence.text = "Split between \(numberOfPeople) people, with \(finalTip)% tip"
+        
         
     }
     
